@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8"> 
+		<meta name="viewport" content="width=device-width"> 
+		<link rel="stylesheet" href="./static/css/intro.css">
+		<script type='module' src="./static/js/audioPlayer.js"></script>
+		<script type='module' src="./static/js/audioPlayerFactory.js"></script>
+		<title> Javascript - audio player </title> <!-- Titre de la page -->
+	</head>
+
+	<body>
+		<header>
+		  	<div id="logo">
+		    	<img src="./static/img/jsIcon.jpg" alt="logo" id="monImage"/>
+		  	</div>
+	</header>
+
+	<div class="container">
+
+	 	 <h1> Bienvenue sur mon site !</h1>
+
+	  	<div class='subDiv'>
+			<audio >
+				<source src="./static/mp3/Lasagesse.mp3" type="audio/mpeg" preload="auto">
+			</audio>
+			<div class="controls">
+				<div class="playBtn">
+					<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+						<g fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"><path d="M11.075 7.508c-1.329-.784-2.825.283-2.825 1.705v5.574c0 1.422 1.496 2.489 2.825 1.705l4.72-2.787c1.273-.752 1.273-2.658 0-3.41zM9.75 9.213c0-.198.096-.337.21-.408a.32.32 0 0 1 .352-.005l4.72 2.787a.47.47 0 0 1 .218.413a.47.47 0 0 1-.218.413l-4.72 2.787a.32.32 0 0 1-.353-.005a.47.47 0 0 1-.209-.408z"/><path d="M12 1.25C6.063 1.25 1.25 6.063 1.25 12S6.063 22.75 12 22.75S22.75 17.937 22.75 12S17.937 1.25 12 1.25M2.75 12a9.25 9.25 0 1 1 18.5 0a9.25 9.25 0 0 1-18.5 0"/></g>
+					</svg>
+				</div>
+				<div class="pauseBtn">
+					<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+						<g fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10" opacity="0.5"/><path d="M8 9.5c0-.466 0-.699.076-.883a1 1 0 0 1 .541-.54C8.801 8 9.034 8 9.5 8s.699 0 .883.076a1 1 0 0 1 .54.541c.077.184.077.417.077.883v5c0 .466 0 .699-.076.883a1 1 0 0 1-.541.54C10.199 16 9.966 16 9.5 16s-.699 0-.883-.076a1 1 0 0 1-.54-.541C8 15.199 8 14.966 8 14.5zm5 0c0-.466 0-.699.076-.883a1 1 0 0 1 .541-.54C13.801 8 14.034 8 14.5 8s.699 0 .883.076a1 1 0 0 1 .54.541c.077.184.077.417.077.883v5c0 .466 0 .699-.076.883a1 1 0 0 1-.541.54c-.184.077-.417.077-.883.077s-.699 0-.883-.076a1 1 0 0 1-.54-.541C13 15.199 13 14.966 13 14.5z"/></g>
+					</svg>
+				</div>
+				<div class="progression">
+					<span id="currentTime">00:00</span>
+					<input type="range" id="progressionRange" name="progression" min="0" max="100" />
+  					<span id="duration">00:00</span>
+				</div>
+				
+			</div>
+			
+	  	</div>
+		<div class='subDiv'>
+	  		
+			<h2>Audio Player</h2>
+	  		<!-- <div class='babyDiv' >classList.remove()</div>
+	  		<div class='babyDiv'>classList.toggle()</div> -->
+	  	</div>
+	</div>
+
+	</body>
+	
+</html>
