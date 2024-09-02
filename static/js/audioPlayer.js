@@ -12,6 +12,7 @@ export const audioPlayer = {
 
     init:function(audioElement){
         this.playerInstance = audioElement
+        console.warn(this.playerInstance)
         this.setPlayerControls()
         this.setControlsEvents()
         
@@ -28,9 +29,9 @@ export const audioPlayer = {
             this.progressionDatas.duration = this.playerInstance.duration
             this.setProgressionValues()
         });
-
-
-        this.playerInstance.addEventListener('timeupdate',()=>{this.progressionTracker()})
+        this.playerInstance.addEventListener('timeupdate',()=>{
+            this.progressionTracker()
+        })
     },
     setProgressionValues:function(){
         this.progressionInstance.querySelector('#duration').textContent = this.secondsToTime(this.progressionDatas.duration)
@@ -50,13 +51,14 @@ export const audioPlayer = {
     progressionTracker:function(){
         const progress = this.playerInstance.currentTime
         const duration = this.playerInstance.duration
-        console.log(progress/duration)
+        const inPercent = Math.round(progress/duration*100)
+        this.progressionInstance.querySelector('#currentTime').textContent = inPercent + '%'
+        this.progressionInstance.querySelector('#progressionRange').value  = inPercent 
     },
     secondsToTime:function(e){
         const h = Math.floor(e / 3600).toString().padStart(2,'0'),
               m = Math.floor(e % 3600 / 60).toString().padStart(2,'0'),
               s = Math.floor(e % 60).toString().padStart(2,'0');
-        
         return h + ':' + m + ':' + s;
         //return `${h}:${m}:${s}`;
     }
